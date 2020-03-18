@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Krunal Dharaiya">
+    <meta name="generator" content="krunal">
+    <title>Operation | CRUD-App</title>
+    <%- include('links')%>
+    <meta name="theme-color" content="#563d7c">
+
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' href='/stylesheets/cover-style.css' />
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <!-- including header.ejs -->
+      <%- include('header')%>
+
+  <!-- Home Page Content Starting -->
+  <main role="main" class="inner cover">
+    <div class="container">
+      <!-- Button to Open the Modal -->
+      <a class="btn btn-primary mb-4" href="insertData">
+        <i class="fa fa-user-plus"></i>&nbsp;Insert Data
+      </a>  
+    </div>
+    <h1 class="cover-heading">All Selected Data</h1>
+      <% if( users_data.length > 0 ) { %>
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0;i<users_data.length;i++) { %>
+          <tr>
+            <th scope="row"><%= i+1 %></th>
+            <td><%= users_data[i].username %></td>
+            <td><%= users_data[i].mobileno %></td>
+            <td>
+              <a class="btn btn-success" href="/updateData/?rid=<%= users_data[i]._id %>">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a class="btn btn-danger" href="/delete/?rid=<%= users_data[i]._id %>">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <h3 class="title">No Data Found</h3>  
+      <% } %>
+  </main>
+
+  <!-- including footer.ejs -->
+  <%- include('footer')%>
+</div>
+</body>
+</html>

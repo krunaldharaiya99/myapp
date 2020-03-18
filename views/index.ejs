@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Krunal Dharaiya">
+    <meta name="generator" content="krunal">
+    <title>Home | CRUD-App</title>
+    <%- include('links')%>
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' href='/stylesheets/cover-style.css' />
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <!-- including header.ejs -->
+      <%- include('header')%>
+
+  <!-- Home Page Content Starting -->
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">CRUD Operation using Express NodeJS</h1>
+    <p class="lead">Hii! I am Krunal, This my CRUD-App where you can perform insert, update and delete operations.And can view all data stored into the database.Here in this CRUD Application i have used MongoDB Database.</p>
+    <p class="lead">
+      <a href="operation" class="btn btn-lg btn-secondary">Let's Start</a>
+    </p>
+  </main>
+
+  <!-- including footer.ejs -->
+  <%- include('footer')%>
+</div>
+</body>
+</html>
+

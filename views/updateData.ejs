@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Krunal Dharaiya">
+    <meta name="generator" content="krunal">
+    <title>Contact | CRUD-App</title>
+    <%- include('links')%>
+    <meta name="theme-color" content="#563d7c">
+
+
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' href='/stylesheets/cover-style.css' />
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <!-- including header.ejs -->
+      <%- include('header')%>
+
+  <!-- Home Page Content Starting -->
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading"><i class="fa fa-edit"></i>&nbsp;Edit Record</h1>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <form method="POST">
+            <input type="hidden" name="id" value="<%= users_data._id %>">
+            <div class="form-group">
+              <label for="name">Enter Full Name : </label>
+              <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Full name" value="<%= users_data.username %>" >
+            </div>
+            <div class="form-group">
+              <label for="mno">Enter Mobile No : </label>
+              <input id="mno" class="form-control" type="text" name="mobileno" placeholder="Enter Your Mobile No" value="<%= users_data.mobileno %>">
+            </div>
+            <input type="submit" class="btn btn-block btn-primary" name="submit" value="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- including footer.ejs -->
+  <%- include('footer')%>
+</div>
+</body>
+</html>
